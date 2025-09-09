@@ -1,0 +1,194 @@
+{
+  "capabilities": [
+    {
+      "title": "Terry & Plain Socks",
+      "capacity": "4,200,000 pairs/year",
+      "description": "High-volume production of comfortable terry and plain socks with consistent quality",
+      "features": ["Automated knitting", "Quality control", "Multiple colors", "Various sizes"]
+    },
+    {
+      "title": "Toe Socks Specialization", 
+      "capacity": "2,040,000 pairs/year",
+      "description": "Specialized manufacturing of innovative toe socks with individual toe compartments",
+      "features": ["Advanced machinery", "Precision knitting", "Comfort engineering", "Unique design"]
+    }
+  ],
+  "machinery": [
+    {
+      "slNo": "1",
+      "description": "Double Cylinder",
+      "brand": "Hyung Jea Machine, Korea",
+      "needle": "168N",
+      "qty": "20"
+    },
+    {
+      "slNo": "2",
+      "description": "Single Cylinder (Plain), 3.5 DIA", 
+      "brand": "T & K, Korea. TK-2100",
+      "needle": "144N",
+      "qty": "11"
+    },
+    {
+      "slNo": "3",
+      "description": "Single Cylinder (Plain & Terry), 3.75 Dia",
+      "brand": "Hanshin, China.HS-606P",
+      "needle": "144N",
+      "qty": "16"
+    },
+    {
+      "slNo": "4",
+      "description": "Single Cylinder, (Plain & Terry) 3.5 Dia",
+      "brand": "Hanshin, China. HS-606M", 
+      "needle": "200N",
+      "qty": "2"
+    },
+    {
+      "slNo": "5",
+      "description": "Single Cylinder Pile Machine, 3.75 Dia",
+      "brand": "T & K, Korea. TK-P500",
+      "needle": "132N",
+      "qty": "8"
+    },
+    {
+      "slNo": "6",
+      "description": "Ashida Rotary Boarding Machine",
+      "brand": "ATR 5PS", 
+      "needle": null,
+      "qty": "2"
+    },
+    {
+      "slNo": "7",
+      "description": "Automatic Linking Machine",
+      "brand": "SG-08",
+      "needle": null,
+      "qty": "2"
+    },
+    {
+      "slNo": "8",
+      "description": "SAMHO Vertical Broiler",
+      "brand": "SVS-1000",
+      "needle": null,
+      "qty": "1"
+    },
+    {
+      "slNo": "9",
+      "description": "Single Cylinder (Plain & Terry), 3.75 Dia",
+      "brand": "Hanshin, China.HS-606P",
+      "needle": "144N", 
+      "qty": "31"
+    },
+    {
+      "slNo": "10",
+      "description": "Single Cylinder (Plain) 3.5 Dia",
+      "brand": "Hanshin, China. HS-606M",
+      "needle": "120N",
+      "qty": "4"
+    },
+    {
+      "slNo": "11",
+      "description": "Glove Knitting Machine",
+      "brand": "Jinhao Machinery GD-D13M/L",
+      "needle": "144N",
+      "qty": "18"
+    },
+    {
+      "slNo": "12",
+      "description": "Glove Knitting Machine",
+      "brand": "Jinhao Machinery GD-D10M/L",
+      "needle": "120N",
+      "qty": "12"
+    },
+    {
+      "slNo": "13",
+      "description": "Glove Knitting Machine",
+      "brand": "Shima Seiki SFG-13GL-S",
+      "needle": "144N",
+      "qty": "5"
+    }
+  ],
+  "cylinderStock": [
+    {
+      "slNo": "1",
+      "details": "3.5 DIA For Korea Machine",
+      "madeIn": "China",
+      "needle": "108N",
+      "qty": "2"
+    },
+    {
+      "slNo": "2",
+      "details": null,
+      "madeIn": "China", 
+      "needle": "120N",
+      "qty": "9"
+    },
+    {
+      "slNo": "3", 
+      "details": null,
+      "madeIn": "China",
+      "needle": "132N",
+      "qty": "2"
+    },
+    {
+      "slNo": "4",
+      "details": null,
+      "madeIn": "China",
+      "needle": "168N",
+      "qty": "1"
+    },
+    {
+      "slNo": "5",
+      "details": null,
+      "madeIn": "China",
+      "needle": "180N",
+      "qty": "6"
+    },
+    {
+      "slNo": "6",
+      "details": "3.75 DIA For China Machine",
+      "madeIn": "China",
+      "needle": "108N",
+      "qty": "16"
+    },
+    {
+      "slNo": "7",
+      "details": "Cylinder (Plain & Terry) 3.75Dia",
+      "madeIn": "Hanshin, China.HS-606P",
+      "needle": "120N",
+      "qty": "21"
+    }
+  ],
+  "qualityStandards": [
+    {
+      "title": "RAJUK Approved",
+      "description": "Government certified facility meeting international standards"
+    },
+    {
+      "title": "Global Engineering",
+      "description": "Factory designed by world-class engineering company"
+    },
+    {
+      "title": "Quality Control",
+      "description": "Rigorous testing and monitoring throughout production"
+    },
+    {
+      "title": "Expert Team",
+      "description": "Skilled professionals with international manufacturing experience"
+    }
+  ],
+  "fireSafety": {
+    "policy": "To prevent fire, at USB, for the safety of all concerned, suitable firefighting equipment based on the needs of departments are installed on every floor. A water hydrant with a separate tank is also installed for firefighting operations.",
+    "equipmentTypes": [
+      "CO2 Fire Extinguishers",
+      "Dry Chemical Type", 
+      "Powder Extinguishers",
+      "Foam Type",
+      "Water Type Systems"
+    ],
+    "maintenance": [
+      "Quarterly equipment checks",
+      "Regular equipment updates",
+      "Employee equipment training", 
+      "Emergency signal awareness"
+    ]
+  }
+}

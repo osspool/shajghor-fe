@@ -1,0 +1,54 @@
+{
+  "sustainableMaterials": [
+    {
+      "title": "Organic Cotton",
+      "description": "Grown without harmful pesticides or synthetic fertilizers, reducing environmental footprint and supporting healthier ecosystems.",
+      "benefits": ["No harmful chemicals", "Biodegradable", "Soil health protection", "Farmer safety"],
+      "color": "bg-green-500"
+    },
+    {
+      "title": "BCI Cotton", 
+      "description": "Better Cotton Initiative certified cotton supporting sustainable farming practices that minimize water usage and reduce chemical inputs.",
+      "benefits": ["Water conservation", "Reduced chemicals", "Farmer well-being", "Sustainable practices"],
+      "color": "bg-blue-500"
+    },
+    {
+      "title": "Recycled Materials",
+      "description": "Using recycled cotton and polyester, including polyester made from recycled plastic bottles, giving new life to existing materials.",
+      "benefits": ["Waste reduction", "Landfill diversion", "Energy conservation", "Circular economy"],
+      "color": "bg-purple-500"
+    }
+  ],
+  "ecoProcesses": [
+    {
+      "title": "Water Conservation",
+      "description": "Advanced water recycling systems and efficient dyeing processes minimize water consumption in our manufacturing operations."
+    },
+    {
+      "title": "Anti-Microbial Finish",
+      "description": "Eco-friendly anti-microbial treatments that extend product life while maintaining safety for both users and environment."
+    },
+    {
+      "title": "Continuous Improvement",
+      "description": "Ongoing investment in cleaner technologies and processes to reduce our environmental impact year over year."
+    }
+  ],
+  "packagingInitiatives": [
+    "Recyclable packaging materials",
+    "Reduced plastic usage",
+    "Biodegradable shipping materials", 
+    "Minimal packaging design",
+    "Reusable packaging options",
+    "Local sourcing to reduce transport emissions"
+  ],
+  "sustainabilityGoals": {
+    "carbonReduction": "-30%",
+    "waterOptimization": "-25%", 
+    "sustainableMaterials": "75%",
+    "wasteReduction": "-40%"
+  },
+  "impactMetrics": {
+    "plasticReduction": "-50%",
+    "recyclablePercentage": "100%"
+  }
+}

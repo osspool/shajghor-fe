@@ -1,0 +1,41 @@
+{
+  "clients": [
+    {
+      "name": "Captain.Yu Co., Ltd.",
+      "country": "Japan",
+      "type": "Premium Retailer"
+    },
+    {
+      "name": "Daiso", 
+      "country": "Japan",
+      "type": "Retail Chain"
+    },
+    {
+      "name": "GSI Creos Corporation",
+      "country": "Japan", 
+      "type": "Industrial Partner"
+    },
+    {
+      "name": "DSI Korea",
+      "country": "Korea",
+      "type": "Distribution Partner"
+    }
+  ],
+  "exportMarkets": [
+    {
+      "country": "Japan",
+      "flag": "🇯🇵", 
+      "description": "Premium quality market focus"
+    },
+    {
+      "country": "Korea",
+      "flag": "🇰🇷",
+      "description": "Strategic partnership base"
+    },
+    {
+      "country": "Canada", 
+      "flag": "🇨🇦",
+      "description": "North American expansion"
+    }
+  ]
+}

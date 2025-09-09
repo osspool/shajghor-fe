@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": "Media Gallery",
+    "subtitle": "Explore UMEDA SB Industries through our visual journey. From advanced manufacturing processes to premium product showcases - witness our commitment to excellence.",
+    "caption": "Showcasing 6.24M+ pairs of annual manufacturing excellence"
+  },
+  "galleryImages": [
+    {
+      "title": "Manufacturing Facility",
+      "description": "State-of-the-art production floor with advanced knitting machinery",
+      "category": "Facility",
+      "src": "/src/assets/gallery/manufacturing-facility.jpg"
+    },
+    {
+      "title": "Advanced Knitting Technology",
+      "description": "Close-up of our precision knitting machines in action", 
+      "category": "Technology",
+      "src": "/src/assets/gallery/knitting-machine.jpg"
+    },
+    {
+      "title": "Premium Product Range",
+      "description": "High-quality socks showcasing our manufacturing excellence",
+      "category": "Products",
+      "src": "/src/assets/gallery/premium-socks.jpg"
+    },
+    {
+      "title": "Quality Assurance",
+      "description": "Rigorous quality control ensures every pair meets our standards",
+      "category": "Quality", 
+      "src": "/src/assets/gallery/quality-control.jpg"
+    },
+    {
+      "title": "Export Operations",
+      "description": "Organized warehouse ready for global distribution",
+      "category": "Logistics",
+      "src": "/src/assets/gallery/warehouse-export.jpg"
+    },
+    {
+      "title": "Design Innovation",
+      "description": "Our creative team developing new sock designs and patterns",
+      "category": "Design",
+      "src": "/src/assets/gallery/design-team.jpg"
+    },
+    {
+      "title": "Premium Materials",
+      "description": "High-quality raw materials imported from trusted suppliers",
+      "category": "Materials",
+      "src": "/src/assets/gallery/raw-materials.jpg"
+    },
+    {
+      "title": "Professional Packaging",
+      "description": "Custom branding and packaging for B2B clients",
+      "category": "Branding", 
+      "src": "/src/assets/gallery/packaging-process.jpg"
+    }
+  ],
+  "stats": {
+    "totalImages": 8,
+    "categories": 7,
+    "qualityFocus": "100%",
+    "production": "24/7"
+  }
+}

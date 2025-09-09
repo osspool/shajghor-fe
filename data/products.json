@@ -1,0 +1,163 @@
+{
+  "products": [
+    {
+      "id": "plain",
+      "title": "Plain Socks",
+      "capacity": "4.2M pairs/year",
+      "description": "High-quality plain socks for everyday comfort and durability",
+      "features": [
+        "Multiple color options",
+        "Various size ranges", 
+        "Bulk order capabilities",
+        "Custom branding available",
+        "International quality standards",
+        "Fast production turnaround"
+      ],
+      "specifications": {
+        "Materials": "Cotton, Polyester, Nylon blends",
+        "Sizes": "XS to XXL available", 
+        "Colors": "20+ standard colors, custom colors available",
+        "MOQ": "1,000 pairs per design",
+        "Lead Time": "2-3 weeks",
+        "Quality": "International standards"
+      },
+      "highlighted": false
+    },
+    {
+      "id": "terry",
+      "title": "Terry Socks", 
+      "capacity": "4.2M pairs/year",
+      "description": "Soft, absorbent terry socks perfect for comfort, sports, and performance activities",
+      "features": [
+        "Superior moisture absorption",
+        "Enhanced comfort cushioning", 
+        "Athletic performance focus",
+        "Durable construction",
+        "Anti-bacterial treatment",
+        "Long-lasting quality"
+      ],
+      "specifications": {
+        "Materials": "Terry cotton, Performance blends",
+        "Thickness": "Light, Medium, Heavy cushioning",
+        "Applications": "Sports, Casual, Professional", 
+        "MOQ": "1,000 pairs per design",
+        "Lead Time": "2-3 weeks",
+        "Features": "Moisture-wicking, Anti-odor"
+      },
+      "highlighted": false
+    },
+    {
+      "id": "toe",
+      "title": "Toe Socks",
+      "capacity": "2.04M pairs/year", 
+      "description": "Innovative toe socks with individual toe compartments for enhanced comfort and foot health",
+      "features": [
+        "Individual toe pockets",
+        "Enhanced blood circulation",
+        "Blister prevention technology",
+        "Superior toe movement", 
+        "Specialized comfort design",
+        "Unique market positioning"
+      ],
+      "specifications": {
+        "Materials": "Premium cotton, Bamboo fiber, Synthetic blends",
+        "Toe Pockets": "5 individual compartments",
+        "Benefits": "Improved circulation, Blister prevention",
+        "MOQ": "500 pairs per design",
+        "Lead Time": "3-4 weeks", 
+        "Specialty": "Patented comfort technology"
+      },
+      "highlighted": true
+    }
+  ],
+  "rawMaterials": [
+    {
+      "name": "Cotton",
+      "source": "Premium imported from India",
+      "quality": "Best material for socks", 
+      "description": "Natural comfort and breathability, widely considered the premium choice for sock manufacturing",
+      "isPremium": true
+    },
+    {
+      "name": "Wool Yarn",
+      "source": "High-grade imported",
+      "quality": "Widely used premium material",
+      "description": "Natural warmth and moisture-wicking properties, excellent for comfort socks",
+      "isPremium": true
+    },
+    {
+      "name": "Viscose",
+      "source": "International suppliers from India", 
+      "quality": "Luxury feel",
+      "description": "Smooth texture with excellent drape and comfort properties",
+      "isPremium": false
+    },
+    {
+      "name": "Poly Yarn",
+      "source": "Durable synthetic from India",
+      "quality": "Long-lasting",
+      "description": "Enhanced durability and shape retention for extended wear",
+      "isPremium": false
+    },
+    {
+      "name": "Nylon",
+      "source": "Strength enhancement",
+      "quality": "Added durability", 
+      "description": "Provides strength and elasticity to sock construction",
+      "isPremium": false
+    },
+    {
+      "name": "Acrylic",
+      "source": "Soft synthetic from India",
+      "quality": "Comfort blend",
+      "description": "Lightweight and warm, ideal for blended fabric compositions",
+      "isPremium": false
+    },
+    {
+      "name": "Polyester",
+      "source": "Performance grade from India",
+      "quality": "Moisture management", 
+      "description": "Quick-dry properties and color retention for active wear",
+      "isPremium": false
+    },
+    {
+      "name": "Olefin",
+      "source": "Lightweight from India",
+      "quality": "Quick-dry",
+      "description": "Moisture-resistant and lightweight for performance applications",
+      "isPremium": false
+    },
+    {
+      "name": "Lycra",
+      "source": "Stretch technology from India",
+      "quality": "Perfect fit",
+      "description": "Superior stretch and recovery for comfortable, form-fitting socks", 
+      "isPremium": false
+    },
+    {
+      "name": "Spandex",
+      "source": "Elasticity from India", 
+      "quality": "Flexible comfort",
+      "description": "Excellent elasticity and shape retention for athletic and comfort socks",
+      "isPremium": false
+    }
+  ],
+  "customServices": [
+    {
+      "title": "Custom Design",
+      "description": "Professional design consultation to bring your ideas to life"
+    },
+    {
+      "title": "Material Selection", 
+      "description": "Wide range of premium materials and blends available"
+    },
+    {
+      "title": "Brand Integration",
+      "description": "Custom branding, labels, and packaging solutions"
+    },
+    {
+      "title": "Quality Assurance",
+      "description": "Rigorous testing and quality control throughout production"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+    "navigation": [
+      { "name": "Home", "href": "/" },
+      { "name": "About", "href": "/about" },
+      { "name": "Manufacturing", "href": "/manufacturing" },
+      { "name": "Products", "href": "/products" },
+      { "name": "Sustainability", "href": "/sustainability" },
+      { "name": "Media", "href": "/media" },
+      { "name": "Contact", "href": "/contact" }
+    ],
+    "footerLinks": {
+      "quickLinks": [
+        { "name": "About Us", "href": "/about" },
+        { "name": "Manufacturing", "href": "/manufacturing" },
+        { "name": "Products & Services", "href": "/products" },
+        { "name": "Sustainability", "href": "/sustainability" }
+      ],
+      "services": [
+        "Plain Socks Manufacturing",
+        "Terry Socks Production", 
+        "Toe Socks Specialization",
+        "Custom Design Services",
+        "Global Export Solutions"
+      ],
+      "legal": [
+        { "name": "Privacy Policy", "href": "/privacy" },
+        { "name": "Terms of Service", "href": "/terms" }
+      ]
+    }
+  }

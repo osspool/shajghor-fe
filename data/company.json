@@ -1,0 +1,46 @@
+{
+  "company": {
+    "name": "UMEDA SB INDUSTRIES LTD",
+    "tagline": "Being smart is the new business plan.",
+    "shortName": "UMEDA",
+    "description": "Bangladesh Korea joint venture specializing in professional B2B socks manufacturing for global markets.",
+    "established": "Joint Venture Formation",
+    "type": "Private Limited Company",
+    "specialty": "B2B Socks Manufacturing"
+  },
+  "contact": {
+    "address": {
+      "street": "168, Godnail, Shiddhirganj",
+      "city": "Narayanganj",
+      "country": "Bangladesh",
+      "full": "168, Godnail, Shiddhirganj, Narayanganj, Bangladesh"
+    },
+    "phone": "+880-1775 983494",
+    "email": "usbind@gmail.com",
+    "website": "www.umedasb.com",
+    "businessHours": [
+      { "day": "Monday - Friday", "hours": "8:00 AM - 6:00 PM" },
+      { "day": "Saturday", "hours": "9:00 AM - 4:00 PM" },
+      { "day": "Sunday", "hours": "Closed" }
+    ]
+  },
+  "production": {
+    "totalAnnualCapacity": "6.24M+",
+    "terryPlainCapacity": "4,200,000",
+    "toeSocketsCapacity": "2,040,000",
+    "exportMarkets": 3,
+    "rawMaterials": "10+"
+  },
+  "certifications": [
+    {
+      "name": "RAJUK Approved",
+      "description": "Capital Development Authority of Bangladesh certified facility",
+      "type": "Government Certification"
+    },
+    {
+      "name": "Global Engineering",
+      "description": "Factory designed and engineered by global engineering company",
+      "type": "International Standards"
+    }
+  ]
+}

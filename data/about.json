@@ -1,0 +1,52 @@
+{
+  "mission": {
+    "title": "Our Mission",
+    "text": "Our mission is to continue the contribution in high quality socks production in the B2B sector. We consider high dedication with a constantly developing and renewing structure according to the needs and demands of our stakeholders as our most important responsibility.",
+    "additional": "On this roadmap drawn by our mission, by constantly speeding up our efforts, we give our best to achieve successful business relationships with companies operating in the international arena. We do this with an understanding respectful to society and environment."
+  },
+  "vision": {
+    "title": "Our Vision", 
+    "text": "With upcoming innovation and success in managing projects and processes including all of production, products and services, we have a wide vision and structure built on a solid foundation. We are preparing ourselves for the future from today to reach faster customer demand and satisfaction.",
+    "additional": "While supporting our faith for always doing better with sustainable success, we are taking solid steps to become a part of the global market."
+  },
+  "values": [
+    {
+      "title": "Quality Excellence",
+      "description": "Commitment to international quality standards and continuous improvement in all processes."
+    },
+    {
+      "title": "Innovation",
+      "description": "Continuous development and adoption of cutting-edge manufacturing technology."
+    },
+    {
+      "title": "Partnership", 
+      "description": "Supporting our partners at every step through collaboration and expertise."
+    },
+    {
+      "title": "Precision",
+      "description": "Dedicated focus on meeting specific client needs with tailored solutions."
+    }
+  ],
+  "milestones": [
+    {
+      "year": "Establishment",
+      "title": "Joint Venture Formation",
+      "description": "Bangladesh-Korea joint venture established with international expertise"
+    },
+    {
+      "year": "RAJUK Approval",
+      "title": "Government Certification", 
+      "description": "Factory approved by Capital Development Authority of Bangladesh"
+    },
+    {
+      "year": "Global Engineering",
+      "title": "World-Class Design",
+      "description": "Factory designed and engineered by global engineering company"
+    },
+    {
+      "year": "Export Success",
+      "title": "International Markets",
+      "description": "Successful export operations to Japan, Korea, and Canada"
+    }
+  ]
+}
