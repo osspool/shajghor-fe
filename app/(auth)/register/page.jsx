@@ -91,7 +91,7 @@ export default function Page() {
         <AuthContainer
             title="Create Account"
             description="Join us to get started with your new account"
-            icon={<UserPlus className="w-6 h-6 text-retro-primary" />}
+            icon={<UserPlus className="w-6 h-6" />}
             className="animate-fade-in"
         >
             <AuthForm

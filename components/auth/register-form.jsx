@@ -1,6 +1,7 @@
 // components/auth/register-form.jsx
 import { cn } from "@/lib/utils";
-import { Eye, EyeOff, Lock, Mail, User } from "lucide-react";
+import { Eye, EyeOff, Lock, Mail, User, Phone } from "lucide-react";
+import { PhoneInput as IntlPhoneInput } from "@/components/custom/ui/phone-input";
 import { useEffect, useState } from "react";
 import { Input } from "../ui/input";
 import { Label } from "../ui/label";
@@ -14,6 +15,7 @@ export function RegisterForm({ defaultEmail = "", onValidityChange }) {
     const [formValues, setFormValues] = useState({
         name: "",
         email: defaultEmail,
+        phone: "",
         password: "",
         password2: "",
     });
@@ -25,6 +27,7 @@ export function RegisterForm({ defaultEmail = "", onValidityChange }) {
         const isValid =
             formValues.name.length >= 3 &&
             formValues.email.includes("@") &&
+            Boolean(formValues.phone && formValues.phone.length > 4) &&
             formValues.password.length >= 6 &&
             formValues.password === formValues.password2;
 
@@ -35,9 +38,10 @@ export function RegisterForm({ defaultEmail = "", onValidityChange }) {
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
+        let nextValue = value;
         setFormValues((prev) => ({
             ...prev,
-            [name]: value,
+            [name]: nextValue,
         }));
 
         if (name === "password") {
@@ -48,9 +52,9 @@ export function RegisterForm({ defaultEmail = "", onValidityChange }) {
     };
 
     return (
-        <div className="flex flex-col space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {/* Full Name Field */}
-            <div className="space-y-2">
+            <div className="space-y-2 md:col-span-1">
                 <div className="flex items-center gap-2">
                     <div
                         className={cn(
@@ -90,7 +94,7 @@ export function RegisterForm({ defaultEmail = "", onValidityChange }) {
             </div>
 
             {/* Email Field */}
-            <div className="space-y-2">
+            <div className="space-y-2 md:col-span-1">
                 <div className="flex items-center gap-2">
                     <div
                         className={cn(
@@ -122,7 +126,6 @@ export function RegisterForm({ defaultEmail = "", onValidityChange }) {
                     placeholder="user@mail.com"
                     autoComplete="email"
                     required
-                    defaultValue={defaultEmail}
                     value={formValues.email}
                     onChange={handleInputChange}
                     onFocus={() => setFocused("email")}
@@ -130,8 +133,46 @@ export function RegisterForm({ defaultEmail = "", onValidityChange }) {
                 />
             </div>
 
+            {/* Phone Field (Bangladesh default) */}
+            <div className="space-y-2 md:col-span-2">
+                <div className="flex items-center gap-2">
+                    <div
+                        className={cn(
+                            "p-1.5 rounded-full transition-colors duration-200",
+                            focused === "phone"
+                                ? "bg-primary/15 text-primary"
+                                : "text-muted-foreground"
+                        )}
+                    >
+                        <Phone className="w-4 h-4" />
+                    </div>
+                    <Label
+                        htmlFor="phone"
+                        className={cn(
+                            "font-medium text-sm transition-colors duration-200",
+                            focused === "phone"
+                                ? "text-primary"
+                                : "text-muted-foreground"
+                        )}
+                    >
+                        Phone Number
+                    </Label>
+                </div>
+                <IntlPhoneInput
+                    value={formValues.phone}
+                    onChange={(val) =>
+                        setFormValues((prev) => ({ ...prev, phone: val || "" }))
+                    }
+                    defaultCountry="BD"
+                    placeholder="Enter phone number"
+                    onFocus={() => setFocused("phone")}
+                    onBlur={() => setFocused(null)}
+                    required
+                />
+            </div>
+
             {/* Password Field */}
-            <div className="space-y-2">
+            <div className="space-y-2 md:col-span-1">
                 <div className="flex items-center gap-2">
                     <div
                         className={cn(
@@ -211,7 +252,7 @@ export function RegisterForm({ defaultEmail = "", onValidityChange }) {
             </div>
 
             {/* Confirm Password Field */}
-            <div className="space-y-2">
+            <div className="space-y-2 md:col-span-1">
                 <div className="flex items-center gap-2">
                     <div
                         className={cn(

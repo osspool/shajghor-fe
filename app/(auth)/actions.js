@@ -15,6 +15,7 @@ const authRegisterSchema = z
     .object({
         name: z.string().min(3),
         email: z.string().email(),
+        phone: z.string(),
         password: z.string().min(6),
         password2: z.string().min(6),
     })
@@ -78,6 +79,7 @@ export const register = async (_, formData) => {
             const validatedData = authRegisterSchema.parse({
                 name: formData.get("name"),
                 email: formData.get("email"),
+                phone: String(formData.get("phone") || ""),
                 password: formData.get("password"),
                 password2: formData.get("password2"),
             });
@@ -94,8 +96,8 @@ export const register = async (_, formData) => {
                         body: JSON.stringify({
                             email: validatedData.email,
                             name: validatedData.name,
+                            phone: validatedData.phone,
                             password: validatedData.password,
-                            password2: validatedData.password2,
                         }),
                     }
                 );

@@ -41,12 +41,10 @@ export function AuthForm({
                 />
             </div>
             
-            <div className="mt-2">
+            <div className="">
                 {children}
             </div>
-            
-            {/* Subtle decorative element */}
-            <div className="absolute -z-10 w-32 h-32 rounded-full blur-3xl opacity-10 bg-primary -bottom-10 -right-10" />
+        
         </Form>
     );
 }
