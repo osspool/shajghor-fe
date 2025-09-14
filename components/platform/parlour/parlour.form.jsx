@@ -19,20 +19,28 @@ import { DynamicTabs } from "@/components/custom/ui/tabs-wrapper";
 import { WeeklyWorkingHours } from "./weekly-working-hours";
 import { PopularCities, PopularAreasByCity } from "@/constants/locations";
 import { PARLOUR_TAGS } from "@/constants/tags";
+import { PopulateOwnerByEmail } from "@/components/platform/populate-owner-by-email";
+import slugify from "slugify";
 
-export function ParlourForm({ token, parlour = null, onSuccess, onCancel, showOwnershipFields = false, formId = "parlour-form", hideActions = false, canEditAdminFields = false }) {
+export function ParlourForm({ token, parlour = null, onSuccess, onCancel, formId = "parlour-form", hideActions = false, canEditAdminFields = false }) {
   const isEdit = !!parlour;
 
   const { createParlour, updateParlour, deleteParlour, isCreating, isUpdating, isDeleting } =
     useParlourActions();
+
+  const extractIdString = (value) => {
+    if (!value) return "";
+    if (typeof value === "string") return value;
+    return value._id || value.id || "";
+  };
 
   const defaultValues = useMemo(
     () => ({
       slug: parlour?.slug || "",
       name: parlour?.name || "",
       branch: parlour?.branch || "",
-      ownerId: parlour?.ownerId || "",
-      organizationId: parlour?.organizationId || "",
+      ownerId: extractIdString(parlour?.ownerId),
+      organizationId: extractIdString(parlour?.organizationId),
       address: parlour?.address || { address: "", city: PopularCities.DHAKA, area: "", zipCode: "" },
       phone: parlour?.phone || "",
       email: parlour?.email || "",
@@ -80,14 +88,25 @@ export function ParlourForm({ token, parlour = null, onSuccess, onCancel, showOw
     defaultValues,
   });
 
+  // Live slug generation removed to reduce re-renders; we fill slug on submit if empty.
+
   const isSubmitting = isCreating || isUpdating || isDeleting;
   const formErrors = form.formState.errors;
 
   const onSubmit = useCallback(
     async (data) => {
       try {
+        // Ensure slug exists: if empty, generate from name at submit time
+        const trimmedSlug = (data.slug || "").trim();
+        const finalSlug = trimmedSlug || (data.name ? slugify(data.name, { lower: true, strict: true, remove: /[*+~.()'"!:@]/g }) : "");
+        const normalizeId = (val) => {
+          if (!val) return undefined;
+          if (typeof val === "string") return val;
+          return val._id || val.id || undefined;
+        };
         const normalized = {
           ...data,
+          slug: finalSlug || undefined,
           // Normalize tags for consistent search (trim, lowercase, unique)
           tags: Array.from(
             new Set(
@@ -97,8 +116,8 @@ export function ParlourForm({ token, parlour = null, onSuccess, onCancel, showOw
             )
           ),
           branch: data.branch ? data.branch : undefined,
-          ownerId: data.ownerId ? data.ownerId : undefined,
-          organizationId: data.organizationId ? data.organizationId : undefined,
+          ownerId: normalizeId(data.ownerId),
+          organizationId: normalizeId(data.organizationId),
           address: data.address
             ? {
                 address: data.address.address || undefined,
@@ -135,6 +154,23 @@ export function ParlourForm({ token, parlour = null, onSuccess, onCancel, showOw
             adButtonText: data.advert.adButtonText || undefined,
           } : undefined,
         };
+
+        // Filter out empty breaks entries (optional field)
+        const cleanedBreaks = (data.breaks || [])
+          .filter((b) => b && b.startTime && b.endTime)
+          .map((b) => ({ startTime: b.startTime, endTime: b.endTime }));
+        normalized.breaks = cleanedBreaks.length > 0 ? cleanedBreaks : undefined;
+
+        // Omit ownership fields when admin editing is not allowed
+        if (!canEditAdminFields) {
+          delete normalized.ownerId;
+          delete normalized.organizationId;
+        }
+        // Omit admin-only promotion fields for tenants
+        if (!canEditAdminFields) {
+          delete normalized.isFeatured;
+          delete normalized.advert;
+        }
         if (isEdit) {
           await updateParlour({ token, id: parlour._id, data: normalized });
         } else {
@@ -149,15 +185,6 @@ export function ParlourForm({ token, parlour = null, onSuccess, onCancel, showOw
     [isEdit, updateParlour, createParlour, token, parlour?._id, onSuccess]
   );
 
-  const handleDelete = useCallback(async () => {
-    if (!parlour?._id) return;
-    try {
-      await deleteParlour({ token, id: parlour._id });
-      onSuccess?.();
-    } catch (error) {
-      toast.error(error.message || "Failed to delete parlour");
-    }
-  }, [parlour?._id, deleteParlour, token, onSuccess]);
 
   const handleFormError = useCallback((errors) => {
     toast.error("Please fix the validation errors before submitting");
@@ -166,30 +193,56 @@ export function ParlourForm({ token, parlour = null, onSuccess, onCancel, showOw
 
   const detailsContent = (
     <div className="space-y-6">
-      {showOwnershipFields && (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <FormInput
-            control={form.control}
-            name="ownerId"
-            label="Owner ID"
-            placeholder="24-hex ObjectId"
-            description="Optional. Only visible to super admins."
-            disabled={isSubmitting}
-          />
-          <FormInput
-            control={form.control}
-            name="organizationId"
-            label="Organization ID"
-            placeholder="24-hex ObjectId"
-            description="Optional. Only visible to super admins."
-            disabled={isSubmitting}
-          />
+      {canEditAdminFields && (
+        <div className="space-y-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <FormInput
+              control={form.control}
+              name="ownerId"
+              label="Owner ID"
+              placeholder="24-hex ObjectId"
+              description="Optional. Only visible to super admins."
+              disabled={isSubmitting || !canEditAdminFields}
+            />
+            <FormInput
+              control={form.control}
+              name="organizationId"
+              label="Organization ID"
+              placeholder="24-hex ObjectId"
+              description="Optional. Only visible to super admins."
+              disabled={isSubmitting || !canEditAdminFields}
+            />
+          </div>
+          {canEditAdminFields && (
+            <PopulateOwnerByEmail
+              token={token}
+              onPopulateUser={(u) => {
+                form.setValue("ownerId", u._id, { shouldDirty: true, shouldValidate: true });
+                if (u.organization) {
+                  form.setValue("organizationId", u.organization, { shouldDirty: true, shouldValidate: true });
+                }
+              }}
+            />
+          )}
         </div>
       )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <FormInput control={form.control} name="name" label="Name" placeholder="Parlour name" required disabled={isSubmitting} />
-        <FormInput control={form.control} name="slug" label="Slug" placeholder="unique-slug" required disabled={isSubmitting} />
+        <FormInput
+          control={form.control}
+          name="name"
+          label="Name"
+          placeholder="Parlour name"
+          required
+          disabled={isSubmitting}
+        />
+        <FormInput
+          control={form.control}
+          name="slug"
+          label="Slug"
+          placeholder="unique-slug (auto if left empty)"
+          disabled={isSubmitting}
+        />
         <FormInput control={form.control} name="branch" label="Branch" placeholder="e.g., Gulshan Branch" disabled={isSubmitting} />
         <FormInput control={form.control} name="phone" label="Phone" placeholder="" disabled={isSubmitting} />
         <FormInput control={form.control} name="email" label="Email" placeholder="" disabled={isSubmitting} />

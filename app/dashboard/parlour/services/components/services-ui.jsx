@@ -24,13 +24,17 @@ export const ServicesUi = () => {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
   const [editingService, setEditingService] = useState(null);
 
-  const { ids, token } = useAdminTenant();
-  const parlourId = ids?.parlourId;
+  const { parlour, token } = useAdminTenant();
+  const parlourId = parlour?._id;
 
-  const { services = [], isLoading } = useServices(token, {
-    parlourId,
-    limit: 100,
-  });
+  const { services = [], isLoading } = useServices(
+    token,
+    {
+      parlourId,
+      limit: 100,
+    },
+    { enabled: !!parlourId }
+  );
   const {
     createService,
     updateService,

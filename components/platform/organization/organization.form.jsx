@@ -12,6 +12,7 @@ import { organizationSchema } from "@/schemas";
 import { useOrganizationActions } from "@/hooks/query/useOrganizations";
 import { toast } from "sonner";
 import { FormErrorSummary } from "@/components/form-utils/FormErrorSummary";
+import { PopulateOwnerByEmail } from "@/components/platform/populate-owner-by-email";
 
 export function OrganizationForm({ token, organization = null, onSuccess, onCancel }) {
   const isEdit = !!organization;
@@ -96,6 +97,13 @@ export function OrganizationForm({ token, organization = null, onSuccess, onCanc
           <FormInput control={form.control} name="email" label="Email" disabled={isSubmitting} />
           <FormInput control={form.control} name="address" label="Address" disabled={isSubmitting} />
         </div>
+
+        <PopulateOwnerByEmail
+          token={token}
+          onPopulate={(ownerId) =>
+            form.setValue("ownerId", ownerId, { shouldDirty: true, shouldValidate: true })
+          }
+        />
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <FormInput

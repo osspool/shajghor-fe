@@ -13,10 +13,13 @@ export const workingHoursItem = z.object({
 
 // Parlour form schema based on provided contract
 export const parlourSchema = z.object({
-  slug: z
-    .string()
-    .min(3)
-    .regex(/^[a-z0-9-]+$/i, "Slug can contain letters, numbers, dashes"),
+  slug: z.preprocess(
+    (v) => (typeof v === "string" && v.trim() === "" ? undefined : v),
+    z
+      .string()
+      .min(3)
+      .regex(/^[a-z0-9-]+$/i, "Slug can contain letters, numbers, dashes")
+  ).optional(),
   name: z.string().min(1),
   branch: z.string().optional(),
   ownerId: optionalObjectIdString,
@@ -61,7 +64,7 @@ export const parlourSchema = z.object({
     .optional(),
   workingHours: z.record(workingHoursItem).optional(),
   breaks: z
-    .array(z.object({ startTime: z.string(), endTime: z.string() }))
+    .array(z.object({ startTime: z.string().optional(), endTime: z.string().optional() }))
     .optional(),
   providerType: z.enum(["salon", "artist"]).optional(),
   serviceLocationMode: z.enum(["in-salon", "at-home", "both"]).optional(),

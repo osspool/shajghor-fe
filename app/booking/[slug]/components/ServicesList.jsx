@@ -36,10 +36,14 @@ export const ServicesList = ({ selectedServices, onServiceToggle, parlourId }) =
       </div>
     );
   }
+
+  if (!services || services.length === 0) {
+    return null;
+  }
   return (
     <div className="space-y-6">
       <div className="text-center">
-        <div className="inline-flex items-center gap-2 bg-gradient-primary text-primary-foreground px-4 py-2 rounded-full mb-4">
+        <div className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-4 py-2 rounded-full mb-4">
           <Sparkles className="h-4 w-4" />
           <span className="font-medium">Our Services</span>
         </div>
