@@ -124,8 +124,7 @@ export const ServicesUi = () => {
               setFormState(initialFormData);
               setIsDialogOpen(true);
             },
-            className:
-              "bg-gradient-primary hover:shadow-glow transition-all duration-300",
+            
           },
         ]}
       />
